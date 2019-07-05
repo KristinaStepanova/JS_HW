@@ -28,15 +28,16 @@ function getCodeStringFromText(val) {
   for (item in val) {
     letterCode += val.charCodeAt(item) + " ";
   }
-  return letterCode;
+  return letterCode.slice(0, -1);
 }
 
 let res3 = getCodeStringFromText("utyr");
+console.log(res3);
 
 //task 4
 function guess(number) {
   if (number > 10 || number < 0) {
-    console.log("error");
+    return console.log("error");
   }
   let val = Math.floor(Math.random() * 10 + 1);
   if (val === number) {
@@ -63,8 +64,7 @@ getArray(5);
 
 //task 6
 function doubleArray(array) {
-  let secondArray;
-  secondArray = array.slice().concat(array);
+  let secondArray = array.slice().concat(array);
   return secondArray;
 }
 
